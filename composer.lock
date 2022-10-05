@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "c59209d0449a4f148bac3b67ac103fc7",
+    "content-hash": "4173f36c31749efc09ffbae2d52baee1",
     "packages": [
         {
             "name": "brick/math",
@@ -899,7 +899,7 @@
         },
         {
             "name": "laranex/laravel-myanmar-nrc",
-            "version": "dev-main",
+            "version": "dev-master",
             "dist": {
                 "type": "path",
                 "url": "packages/laranex/laravel-myanmar-nrc",
@@ -1769,51 +1769,6 @@
                 }
             ],
             "time": "2022-07-24T11:55:47+00:00"
-        },
-        {
-            "name": "naythukhant/laravel-dev-login",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/NayThuKhant/laravel-dev-login.git",
-                "reference": "e408133bef182a53f37d63b4f51331a1cfbf2ead"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/NayThuKhant/laravel-dev-login/zipball/e408133bef182a53f37d63b4f51331a1cfbf2ead",
-                "reference": "e408133bef182a53f37d63b4f51331a1cfbf2ead",
-                "shasum": ""
-            },
-            "default-branch": true,
-            "type": "library",
-            "extra": {
-                "laravel": {
-                    "providers": [
-                        "NayThuKhant\\LaravelDevLogin\\DevLoginServiceProvider"
-                    ]
-                }
-            },
-            "autoload": {
-                "psr-4": {
-                    "NayThuKhant\\LaravelDevLogin\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Nay Thu Khant",
-                    "email": "naythukhant644@gmail.com"
-                }
-            ],
-            "description": "A laravel package to login during development with one click",
-            "support": {
-                "issues": "https://github.com/NayThuKhant/laravel-dev-login/issues",
-                "source": "https://github.com/NayThuKhant/laravel-dev-login/tree/master"
-            },
-            "time": "2022-06-11T18:34:17+00:00"
         },
         {
             "name": "nesbot/carbon",
@@ -7913,9 +7868,7 @@
     ],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "naythukhant/laravel-dev-login": 20
-    },
+    "stability-flags": [],
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {
