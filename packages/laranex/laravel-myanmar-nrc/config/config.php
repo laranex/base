@@ -1,7 +1,7 @@
 <?php
 
-/*The purpose of this config file is only to seed the initial data*/
 return [
+    'locale' => 'en', // only en and mm are allowed
     'types' => [
         [
             'code' => 'N',
