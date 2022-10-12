@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class State extends Model
 {
-    public $table = "nrc_states";
+    public $table = 'nrc_states';
 
     protected $fillable = ['code', 'code_mm', 'name', 'name_mm'];
 

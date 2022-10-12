@@ -3,6 +3,7 @@
 namespace laranex\LaravelMyanmarNRC\Rules;
 
 use Illuminate\Contracts\Validation\InvokableRule;
+use laranex\LaravelMyanmarNRC\LaravelMyanmarNrc;
 
 class MyanmarNRC implements InvokableRule
 {
@@ -16,6 +17,8 @@ class MyanmarNRC implements InvokableRule
      */
     public function __invoke($attribute, $value, $fail)
     {
-
+        if (! (new LaravelMyanmarNrc)->isValidMyanmarNRC($value)) {
+            $fail('laravel-myanmar-nrc::validation.invalid')->translate();
+        }
     }
 }

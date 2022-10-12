@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('nrc_types', function (Blueprint $table) {
             $table->id();
-            $table->string("code");
-            $table->string("code_mm");
-            $table->string("name");
-            $table->string("name_mm");
+            $table->string('code');
+            $table->string('code_mm');
+            $table->string('name');
+            $table->string('name_mm');
             $table->timestamps();
         });
     }

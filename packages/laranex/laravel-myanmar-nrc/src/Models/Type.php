@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Type extends Model
 {
-    public $table = "nrc_types";
+    public $table = 'nrc_types';
 
     protected $fillable = ['code', 'code_mm', 'name', 'name_mm'];
 }

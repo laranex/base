@@ -9,15 +9,20 @@ class LaravelMyanmarNrcServiceProvider extends ServiceProvider
 {
     public function boot()
     {
-         $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        $this->loadMigrationsFrom(__DIR__.'/../database/migrations');
+        $this->loadTranslationsFrom(__DIR__.'/../lang', 'laravel-myanmar-nrc');
 
         if ($this->app->runningInConsole()) {
             $this->commands([
-                SeedMyanmarNRCCommand::class
+                SeedMyanmarNRCCommand::class,
             ]);
 
             $this->publishes([
                 __DIR__.'/../config/config.php' => config_path('laravel-myanmar-nrc.php'),
+            ], 'laravel-myanmar-nrc');
+
+            $this->publishes([
+                __DIR__.'/../lang' => $this->app->langPath('vendor/laravel-myanmar-nrc'),
             ], 'laravel-myanmar-nrc');
         }
     }

@@ -6,9 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Township extends Model
 {
-    public $table = "nrc_townships";
+    public $table = 'nrc_townships';
 
-    protected $fillable = ['nrc_state_id','code', 'code_mm', 'name', 'name_mm'];
+    protected $fillable = ['nrc_state_id', 'code', 'code_mm', 'name', 'name_mm'];
 
     public function nrcTownship(): \Illuminate\Database\Eloquent\Relations\BelongsTo
     {
