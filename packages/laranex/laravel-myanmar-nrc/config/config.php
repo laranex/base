@@ -1,29 +1,21 @@
 <?php
 
 return [
-    'locale' => 'en', // only en and mm are allowed
-    'types' => [
-        [
-            'code' => 'N',
-            'code_mm' => 'နိုင်',
-            'name' => 'CITIZEN',
-            'name_mm' => 'နိုင်ငံသား',
-        ],
-    ],
-    'states' => [
-        [
-            'code' => 12,
-            'code_mm' => '၁၂',
-            'name' => 'YANGON',
-            'name_mm' => 'ရန်ကုန်',
-            'townships' => [
-                [
-                    'code' => 'UKAMA',
-                    'code_mm' => 'ဥကမ',
-                    'name' => 'NORTH OKKALAPA',
-                    'name_mm' => 'မြောက်ဥက္ကလာပ',
-                ],
-            ],
-        ],
-    ],
+    /**
+     * Only en and mm are allowed
+     */
+    'locale' => 'en',
+
+    /**
+     * Json file to be read.
+     * Custom files are welcomed. Example - storage_path("nrc.json")
+     **/
+    'json_file' => 'nrc.json',
+
+    /**
+     * This will determine if the application should use database for validation and parsing of nrc or not
+     * true = database driven
+     * false = json file driven
+     **/
+    'db_driven' => false,
 ];

@@ -10,3 +10,11 @@
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
+
+Route::post('test', function (Illuminate\Http\Request $request) {
+    $validated = $request->validate([
+        'nrc' => new \laranex\LaravelMyanmarNRC\Rules\MyanmarNRC(),
+    ]);
+
+    return $validated;
+});

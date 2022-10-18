@@ -4,6 +4,7 @@ namespace laranex\LaravelMyanmarNRC\Console;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\DB;
+use laranex\LaravelMyanmarNRC\Data\MyanmarNRCJsonHandler;
 use laranex\LaravelMyanmarNRC\Models\State;
 use laranex\LaravelMyanmarNRC\Models\Township;
 use laranex\LaravelMyanmarNRC\Models\Type;
@@ -16,6 +17,8 @@ class SeedMyanmarNRCCommand extends Command
 
     public function handle()
     {
+        $nrcData = new MyanmarNRCJsonHandler();
+
         $this->info('Loading and seeding NRCs from configs/laravel-myanmar-nrc');
 
         $this->warn('Deleting NRCs from database');
@@ -28,29 +31,9 @@ class SeedMyanmarNRCCommand extends Command
 
         $this->warn('Deleting NRCs from database is completed');
 
-        collect(config('laravel-myanmar-nrc.types'))->map(function ($type) {
-            Type::create($type);
-        });
-
-        $townships = collect();
-
-        collect(config('laravel-myanmar-nrc.states'))->each(function ($state) use (&$townships) {
-            $state = collect($state);
-
-            $stateId = State::create($state->except(['townships'])->toArray())->id;
-
-            $now = now();
-            collect($state->get('townships'))->each(function ($township) use (&$townships, $stateId, $now) {
-                $townships->push([
-                    ...$township,
-                    'nrc_state_id' => $stateId,
-                    'created_at' => $now,
-                    'updated_at' => $now,
-                ]);
-            });
-        });
-
-        Township::insert($townships->all());
+        Type::insert($nrcData->types->toArray());
+        State::insert($nrcData->states->toArray());
+        Township::insert($nrcData->townships->toArray());
 
         $this->info('NRCs from configs/laravel-myanmar-nrc were seeded into database');
     }

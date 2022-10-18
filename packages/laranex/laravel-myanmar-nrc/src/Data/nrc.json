@@ -1,0 +1,29 @@
+{
+    "types": [
+        {
+            "id": 1,
+            "code": "N",
+            "code_mm": "နိုင်",
+            "name": "CITIZEN",
+            "name_mm": "နိုင်ငံသား"
+        }
+    ],
+    "states": [
+        {
+            "id": 12,
+            "code": 12,
+            "code_mm": "၁၂",
+            "name": "YANGON",
+            "name_mm": "ရန်ကုန်",
+            "townships": [
+                {
+                    "id": 1,
+                    "code": "UKAMA",
+                    "code_mm": "ဥကမ",
+                    "name": "NORTH OKKALAPA",
+                    "name_mm": "မြောက်ဥက္ကလာပ"
+                }
+            ]
+        }
+    ]
+}
