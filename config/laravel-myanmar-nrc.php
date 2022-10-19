@@ -17,5 +17,5 @@ return [
      * true = database driven
      * false = json file driven
      **/
-    'db_driven' => true,
+    'db_driven' => false,
 ];

@@ -33,7 +33,7 @@ class MyanmarNRCJsonHandler
 
         $nrcCollection = json_decode($json, true);
 
-        if (!isset($nrcCollection['types']) || !isset($nrcCollection['states'])) {
+        if (! isset($nrcCollection['types']) || ! isset($nrcCollection['states'])) {
             throw  new \Exception('Invalid Json File');
         }
 
@@ -77,9 +77,8 @@ class MyanmarNRCJsonHandler
         if ($model instanceof State) {
             $model->code = $raw['id'];
         } else {
-            $model->code = $raw["code"];
+            $model->code = $raw['code'];
         }
-
 
         $model->id = $raw['id'];
         $model->code_mm = $raw['code_mm'];
