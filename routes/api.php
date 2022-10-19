@@ -16,5 +16,5 @@ Route::post('test', function (Illuminate\Http\Request $request) {
         'nrc' => new \laranex\LaravelMyanmarNRC\Rules\MyanmarNRC(),
     ]);
 
-    return $validated;
+    return \laranex\LaravelMyanmarNRC\LaravelMyanmarNrcFacade::parseNRC();
 });
