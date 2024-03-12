@@ -21,7 +21,7 @@ Route::get('/', function () {
 Route::group(["prefix" => "laravel-myanmar-payments"], function () {
 
 
-    Route::get("get-wave-payment-url", function () {
+    Route::get("get-kbzpay-payment-url", function () {
         return LaravelMyanmarPaymentsFacade::channel("kbz_pay.pwaapp")->getPaymentScreenUrl();
     });
 });
