@@ -24,4 +24,8 @@ Route::group(["prefix" => "laravel-myanmar-payments"], function () {
     Route::get("get-kbzpay-payment-url", function () {
         return LaravelMyanmarPaymentsFacade::channel("kbz_pay.pwaapp")->getPaymentScreenUrl();
     });
+
+    Route::get("get-kbzpay-payment-verify/{merchant_order_id}", function ($merchant_order_id) {
+        return LaravelMyanmarPaymentsFacade::channel("kbz_pay.pwaapp")->verifyPayment($merchant_order_id);
+    });
 });
