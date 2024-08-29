@@ -18,6 +18,12 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/log-test/{message}', function ($message = "No message") {
+    \Illuminate\Support\Facades\Log::info("Log Info Test", ["message" => $message]);
+    \Illuminate\Support\Facades\Log::error("Log Error Test", ["message" => $message]);
+    return "Logged";
+});
+
 Route::group(["prefix" => "laravel-myanmar-payments"], function () {
 
 
