@@ -18,20 +18,18 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/log-test/{message}', function ($message = "No message") {
-    \Illuminate\Support\Facades\Log::info("Log Info Test", ["message" => $message]);
-    \Illuminate\Support\Facades\Log::error("Log Error Test", ["message" => $message]);
-    return "Logged";
+Route::get('/log-test/{message}', function ($message = 'No message') {
+    \Illuminate\Support\Facades\Log::info('Log Info Test ' . $message , ['message' => $message]);
+    return 'Logged';
 });
 
-Route::group(["prefix" => "laravel-myanmar-payments"], function () {
+Route::group(['prefix' => 'laravel-myanmar-payments'], function () {
 
-
-    Route::get("get-kbzpay-payment-url", function () {
-        return LaravelMyanmarPaymentsFacade::channel("kbz_pay.pwaapp")->getPaymentScreenUrl();
+    Route::get('get-kbzpay-payment-url', function () {
+        return LaravelMyanmarPaymentsFacade::channel('kbz_pay.pwaapp')->getPaymentScreenUrl();
     });
 
-    Route::get("get-kbzpay-payment-verify/{merchant_order_id}", function ($merchant_order_id) {
-        return LaravelMyanmarPaymentsFacade::channel("kbz_pay.pwaapp")->verifyPayment($merchant_order_id);
+    Route::get('get-kbzpay-payment-verify/{merchant_order_id}', function ($merchant_order_id) {
+        return LaravelMyanmarPaymentsFacade::channel('kbz_pay.pwaapp')->verifyPayment($merchant_order_id);
     });
 });

@@ -45,3 +45,5 @@ php artisan migrate
 php artisan db:seed
 
 
+sudo apt install certbot python3-certbot-nginx
+sudo certbot --nginx -d base.onenex.dev
