@@ -10,7 +10,8 @@
         "laravel/framework": "^10.10",
         "laravel/sanctum": "^3.3",
         "laravel/tinker": "^2.8",
-        "laranex/laravel-myanmar-payments": "dev-master"
+        "laranex/laravel-myanmar-payments": "dev-master",
+        "laranex/laravel-newrelic": "dev-main"
     },
     "require-dev": {
         "barryvdh/laravel-ide-helper": "^3.0",
@@ -65,6 +66,10 @@
         {
             "type": "path",
             "url": "packages/laranex/laravel-myanmar-payments"
+        },
+        {
+            "type": "path",
+            "url": "packages/laranex/laravel-newrelic"
         }
     ],
     "config": {

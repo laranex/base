@@ -1,0 +1,3 @@
+[submodule "packages/laranex/laravel-newrelic"]
+	path = packages/laranex/laravel-newrelic
+	url = git@github.com:laranex/laravel-newrelic.git
